@@ -1,5 +1,7 @@
 <hr>
-<p>Footer © Blog</p>
+<p>Footer © Blog <?= date('Y') ?> <hr>
+</body>
+</html></p>
 
 </body>
 </html>

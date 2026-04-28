@@ -57,9 +57,22 @@ $route['admin/login'] = 'Admin/Auth/login';
 $route['admin/loginSubmit'] = 'Admin/Auth/loginSubmit';
 $route['admin/logout'] = 'Admin/Auth/logout';
 
+$route['admin/register'] = 'Admin/Auth/register';
+$route['admin/register/submit'] = 'Admin/Auth/registerSubmit';
+
 $route['admin/dashboard'] = 'Admin/Dashboard/index';
 
-$route['admin/category'] = 'Admin/Category/index';
+// $route['admin/category'] = 'Admin/Category/index';
+// $route['admin/category/create'] = 'Admin/Category/create';
+// $route['admin/category/store'] = 'Admin/Category/store';
+// $route['admin/category/delete/(:num)'] = 'Admin/Category/delete/$1';
+
+$route['admin/category']        = 'Admin/Category/index';
 $route['admin/category/create'] = 'Admin/Category/create';
-$route['admin/category/store'] = 'Admin/Category/store';
+$route['admin/category/store']  = 'Admin/Category/store';
+$route['admin/category/edit/(:num)']   = 'Admin/Category/edit/$1';
+$route['admin/category/update/(:num)'] = 'Admin/Category/update/$1';
 $route['admin/category/delete/(:num)'] = 'Admin/Category/delete/$1';
+
+
+

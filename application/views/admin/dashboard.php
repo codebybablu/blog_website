@@ -1,6 +1,6 @@
 <?php $this->load->view('admin/layout/header'); ?>
 
-<h1>Welcome Admin Dashboard</h1>
+<p>Hello, <?= $this->session->userdata('admin_name'); ?></p>
 
 <a href="<?= base_url('admin/logout') ?>">Logout</a>
 
