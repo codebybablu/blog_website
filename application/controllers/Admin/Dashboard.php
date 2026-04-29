@@ -1,15 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Dashboard extends MY_Controller {
 
     public function __construct() {
         parent::__construct();
-
-        // 🔒 Session check
-        if(!$this->session->userdata('admin_id')){
-            redirect('admin/login');
-        }
+//         echo APPPATH;
+// die();
+//         echo file_exists(APPPATH.'core/MY_Controller.php') ? 'FOUND' : 'NOT FOUND';
+// die();
+        $this->checkLogin(); // login required
+        $this->checkAdmin(); // only admin allowed
     }
 
     public function index() {

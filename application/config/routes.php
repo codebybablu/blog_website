@@ -74,5 +74,6 @@ $route['admin/category/edit/(:num)']   = 'Admin/Category/edit/$1';
 $route['admin/category/update/(:num)'] = 'Admin/Category/update/$1';
 $route['admin/category/delete/(:num)'] = 'Admin/Category/delete/$1';
 
-
+$route['default_controller'] = 'blog';
+$route['blog/(:any)'] = 'blog/detail/$1';
 

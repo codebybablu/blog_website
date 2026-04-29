@@ -18,6 +18,10 @@ class Auth extends CI_Controller {
             'email' => $email
         ])->row();
 
+        // echo '<pre>';
+        // print_r($user);
+        // echo '</pre>';
+
         // verify password
         if($user && password_verify($password, $user->password)) {
 
