@@ -5,7 +5,7 @@ class Auth extends CI_Controller {
 
     // 🔹 LOGIN PAGE
     public function login() {
-        $this->load->view('admin/login');
+        $this->load->view('admin/auth/login');
     }
 
     // 🔹 LOGIN SUBMIT
@@ -47,7 +47,7 @@ class Auth extends CI_Controller {
 
     // 🔹 REGISTER PAGE
     public function register() {
-        $this->load->view('admin/register');
+        $this->load->view('admin/auth/register');
     }
 
     // 🔹 REGISTER SUBMIT
@@ -68,6 +68,6 @@ class Auth extends CI_Controller {
     // 🔹 LOGOUT
     public function logout(){
         $this->session->sess_destroy(); // better than unset
-        redirect('admin/login');
+        redirect('admin/auth/login');
     }
 }

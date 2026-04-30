@@ -14,6 +14,27 @@ class Dashboard extends MY_Controller {
     }
 
     public function index() {
-        $this->load->view('admin/dashboard');
+
+    $data['recent_blogs'] = $this->db
+    ->select('blogs.*, categories.name as category_name')
+    ->join('categories', 'categories.id = blogs.category_id', 'left')
+    ->order_by('blogs.id', 'DESC')
+    ->limit(5)
+    ->get('blogs')
+    ->result();
+
+
+    $data['total_blogs'] = $this->db->count_all('blogs');
+
+    $data['published_blogs'] = $this->db
+        ->where('status', 'published')
+        ->count_all_results('blogs');
+
+    $data['draft_blogs'] = $this->db
+        ->where('status', 'draft')
+        ->count_all_results('blogs');
+
+    $data['total_categories'] = $this->db->count_all('categories');
+        $this->load->view('admin/dashboard', $data);
     }
 }
