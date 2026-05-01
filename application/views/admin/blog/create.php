@@ -1,3 +1,5 @@
+<?php $this->load->view('admin/layout/header'); ?>
+
 <form method="post" action="<?= base_url('admin/blog/store') ?>" enctype="multipart/form-data">
 
 <input type="text" name="title" placeholder="Title"><br><br>
@@ -21,3 +23,5 @@
 <button type="submit">Save</button>
 
 </form>
+
+<?php $this->load->view('admin/layout/footer'); ?>

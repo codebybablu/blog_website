@@ -1,3 +1,4 @@
+<?php $this->load->view('admin/layout/header'); ?>
 <h2>Edit Blog</h2>
 
 <form method="post" action="<?= base_url('admin/blog/update/'.$blog->id) ?>" enctype="multipart/form-data">
@@ -37,3 +38,5 @@
     <button type="submit">Update</button>
 
 </form>
+
+<?php $this->load->view('admin/layout/footer'); ?>

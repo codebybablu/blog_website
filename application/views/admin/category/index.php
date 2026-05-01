@@ -1,3 +1,4 @@
+<?php $this->load->view('admin/layout/header'); ?>
 <h2>Categories</h2>
 
 <a href="<?= base_url('admin/category/create') ?>">Add Category</a>
@@ -21,3 +22,4 @@
 <?php endforeach; ?>
 
 </table>
+<?php $this->load->view('admin/layout/footer'); ?>
