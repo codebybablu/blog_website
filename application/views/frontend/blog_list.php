@@ -6,6 +6,66 @@
 
 <div class="row">
 
+<form method="get" class="mb-4">
+    <div class="row">
+
+        <!-- 🔹 CATEGORY -->
+        <div class="col-md-4">
+            <select name="category" class="form-control">
+                <option value="">All Categories</option>
+
+                <?php foreach($categories as $cat): ?>
+                    <option value="<?= $cat->id ?>"
+                        <?= ($this->input->get('category') == $cat->id) ? 'selected' : '' ?>>
+                        <?= $cat->name ?>
+                    </option>
+                <?php endforeach; ?>
+
+            </select>
+        </div>
+        
+
+        <!-- 🔹 SEARCH -->
+        <div class="col-md-4">
+            <input type="text" name="search"
+                   value="<?= $this->input->get('search') ?>"
+                   class="form-control"
+                   placeholder="Search blogs...">
+        </div>
+
+        <!-- 🔹 BUTTON -->
+        <div class="col-md-2">
+            <button class="btn btn-primary">Search</button>
+        </div>
+
+    </div>
+</form>
+
+
+<!-- <form method="get" class="mb-4">
+    <div class="row">
+
+        <div class="col-md-4">
+            <select name="category" class="form-control">
+                <option value="">All Categories</option>
+
+                <?php foreach($categories as $cat): ?>
+                    <option value="<?= $cat->id ?>"
+                        <?= ($this->input->get('category') == $cat->id) ? 'selected' : '' ?>>
+                        <?= $cat->name ?>
+                    </option>
+                <?php endforeach; ?>
+
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <button class="btn btn-primary">Filter</button>
+        </div>
+
+    </div>
+</form> -->
+
 <?php if(!empty($blogs)): ?>
     <?php foreach($blogs as $blog): ?>
 
@@ -53,8 +113,10 @@
     <p>No blogs found</p>
 <?php endif; ?>
 
+
 </div>
 
 </div>
+
 
 <?php $this->load->view('frontend/layout/footer'); ?>
