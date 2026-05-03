@@ -1,3 +1,4 @@
+<!-- header section -->
 <?php $this->load->view('frontend/layout/header'); ?>
 
 <div class="container mt-4">
@@ -118,5 +119,6 @@
 
 </div>
 
+<!-- footer section -->
 
 <?php $this->load->view('frontend/layout/footer'); ?>
