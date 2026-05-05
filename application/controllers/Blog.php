@@ -30,17 +30,18 @@ public function index() {
 
     $total_rows = $this->db->count_all_results();
 
-    // 🔹 PAGINATION CONFIG
+    // 🔹 PAGINATION CONFIG (🔥 ENABLED)
     $config['base_url'] = base_url();
     $config['total_rows'] = $total_rows;
-    $config['per_page'] = 4;
+    $config['per_page'] = 4; // ✅ 4 BLOGS PER PAGE
     $config['page_query_string'] = TRUE;
     $config['query_string_segment'] = 'per_page';
     $config['reuse_query_string'] = TRUE;
 
     $this->pagination->initialize($config);
 
-    $page = $this->input->get('per_page');
+    // 🔥 FIX NULL WARNING
+    $page = (int) $this->input->get('per_page');
 
     // 🔹 FETCH DATA
     $this->db->where('blogs.status', 'published');
@@ -64,8 +65,17 @@ public function index() {
         ->get('blogs')
         ->result();
 
-    // 🔥 IMPORTANT LINE (your missing part)
+    // 🔹 LINKS
     $data['links'] = $this->pagination->create_links();
+
+    // 🔥 ADD THIS HERE (IMPORTANT)
+    $data['recent_posts'] = $this->db
+        ->select('id, title, slug, image, created_at')
+        ->where('status', 'published')
+        ->order_by('id', 'DESC')
+        ->limit(5)
+        ->get('blogs')
+        ->result();
 
     $this->load->view('frontend/blog_list', $data);
 }
