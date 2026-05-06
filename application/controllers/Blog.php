@@ -77,6 +77,8 @@ public function index() {
         ->get('blogs')
         ->result();
 
+    
+
     $this->load->view('frontend/blog_list', $data);
 }
 

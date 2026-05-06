@@ -26,7 +26,20 @@
         <?= $blog->content ?>
     </div>
 
+    <h4>Leave a Comment</h4>
+    
+    <form method="post" action="<?= base_url('add-comment') ?>">
+        <input type="hidden" name="post_id" value="<?= $blog->id ?>">
+        <input type="hidden" name="parent_id" value="0">
+    
+        <input type="text" name="name" class="form-control mb-2" placeholder="Name" required>
+        <textarea name="comment" class="form-control mb-2" placeholder="Comment" required></textarea>
+    
+        <button class="btn btn-primary btn-sm">Submit</button>
+    </form>
+    
 </div>
+
 
 </body>
 </html>
