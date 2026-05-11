@@ -5,6 +5,7 @@ class Blog extends CI_Controller {
 
 public function index() {
 
+    // load pagination library
     $this->load->library('pagination');
 
     $category_id = $this->input->get('category');
