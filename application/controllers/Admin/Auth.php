@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth extends CI_Controller {
 
+    public function __construct() {
+        parent::__construct();
+        $this->load->library('email');
+        $this->load->config('email');
+    }
+
     // 🔹 LOGIN PAGE
     public function login() {
         $this->load->view('admin/auth/login');
@@ -50,20 +56,72 @@ class Auth extends CI_Controller {
         $this->load->view('admin/auth/register');
     }
 
-    // 🔹 REGISTER SUBMIT
     public function registerSubmit() {
 
-        $data = [
-            'name' => $this->input->post('name'),
-            'email' => $this->input->post('email'),
-            'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-            'role' => 'user'
-        ];
+    $data = [
+        'name' => $this->input->post('name'),
+        'email' => $this->input->post('email'),
+        'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+        'role' => 'user'
+    ];
 
-        $this->db->insert('users', $data);
-        $this->session->set_flashdata('success', 'Registration successful. Please login.');
-        redirect('admin/login');
+    // 🔹 INSERT USER
+    $this->db->insert('users', $data);
+
+    // 🔹 SEND EMAIL
+    $this->email->from('aakashroymj@gmail.com', 'My Blog');
+    $this->email->to($data['email']);
+
+    $this->email->subject('Welcome to My Blog');
+
+    $message = "
+        <h2>Welcome ".$data['name']." 👋</h2>
+
+        <p>Thank you for registering on our blog website.</p>
+
+        <p>We are excited to have you with us.</p>
+
+        <br>
+
+        <a href='".base_url('admin/login')."'>
+            Login Now
+        </a>
+    ";
+
+    $this->email->message($message);
+
+    // 🔹 SEND
+    if($this->email->send()) {
+
+        $this->session->set_flashdata(
+            'success',
+            'Registration successful. Welcome email sent.'
+        );
+
+    } else {
+
+        // DEBUG ERROR
+        echo $this->email->print_debugger();
+        die();
     }
+
+    redirect('admin/login');
+}
+
+    // 🔹 REGISTER SUBMIT
+    // public function registerSubmit() {
+
+    //     $data = [
+    //         'name' => $this->input->post('name'),
+    //         'email' => $this->input->post('email'),
+    //         'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+    //         'role' => 'user'
+    //     ];
+
+    //     $this->db->insert('users', $data);
+    //     $this->session->set_flashdata('success', 'Registration successful. Please login.');
+    //     redirect('admin/login');
+    // }
 
     // 🔹 LOGOUT
     public function logout(){
