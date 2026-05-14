@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+// removing credentials for SMTP for security reasons 
 $config = array(
     'protocol'  => 'smtp',
     'smtp_host' => 'smtp.gmail.com',
