@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+//  email configuration moved to config/email.php for better organization and security
+
 $config = array(
     'protocol'  => 'smtp',
     'smtp_host' => 'smtp.gmail.com',
