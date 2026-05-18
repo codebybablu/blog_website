@@ -9,6 +9,7 @@ class Dashboard extends MY_Controller {
 // die();
 //         echo file_exists(APPPATH.'core/MY_Controller.php') ? 'FOUND' : 'NOT FOUND';
 // die();
+//debug
         $this->checkLogin();   // login required
         $this->checkUser();    // only user allowed
 
