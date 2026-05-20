@@ -8,6 +8,7 @@ public function index() {
     // load pagination library
     $this->load->library('pagination');
 
+// search by category
     $category_id = $this->input->get('category');
     $search = $this->input->get('search');
 
