@@ -9,7 +9,7 @@ class Category extends CI_Controller {
         $this->load->view('admin/category/index', $data);
     }
 
-    // 🔹 Create form
+    // 🔹 Create form load
     public function create() {
         $this->load->view('admin/category/create');
     }
