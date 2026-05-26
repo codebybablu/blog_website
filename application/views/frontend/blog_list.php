@@ -1,5 +1,6 @@
 <?php $this->load->view('frontend/layout/header'); ?>
 
+// style 
 <style>
     body {
         background: #f8f9fa;
