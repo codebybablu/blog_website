@@ -90,7 +90,7 @@
 
                                 <div class="card-body">
 
-                                    <!-- CATEGORY -->
+                                    <!-- CATEGORY Show -->
                                     <div class="blog-category mb-1">
                                         <?= $blog->category_name ?>
                                     </div>
