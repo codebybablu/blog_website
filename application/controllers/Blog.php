@@ -12,7 +12,7 @@ public function index() {
     $category_id = $this->input->get('category');
     $search = $this->input->get('search');
 
-    // 🔹 categories
+    // 🔹 categories by id
     $data['categories'] = $this->db->get('categories')->result();
 
     // 🔹 COUNT QUERY
