@@ -66,7 +66,7 @@
 
     <div class="row">
 
-        <!-- 🔹 LEFT: BLOGS -->
+        <!-- 🔹 LEFT: Side BLOGS -->
         <div class="col-md-8">
 
             <h2 class="mb-4 fw-bold">Latest Articles</h2>
