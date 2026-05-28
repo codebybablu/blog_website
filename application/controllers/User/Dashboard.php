@@ -14,7 +14,7 @@ class Dashboard extends MY_Controller {
         $this->checkUser();    // only user allowed
 
     }
-
+    // for user dashboard view
     public function index() {
         $this->load->view('user/dashboard');
     }
