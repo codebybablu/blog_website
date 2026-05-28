@@ -10,7 +10,7 @@ public function index() {
 
 // search by category
     $category_id = $this->input->get('category');
-    $search = $this->input->get('search');
+    $search = $this->input->get('search');	
 
     // 🔹 categories by name
     $data['categories'] = $this->db->get('categories')->result();
