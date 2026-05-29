@@ -12,7 +12,7 @@ class Dashboard extends MY_Controller {
         $this->checkLogin(); // login required
         $this->checkAdmin(); // only admin allowed
     }
-
+// admin dashboard 
     public function index() {
 
     $data['recent_blogs'] = $this->db
