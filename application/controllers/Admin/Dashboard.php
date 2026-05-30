@@ -23,7 +23,7 @@ class Dashboard extends MY_Controller {
     ->get('blogs')
     ->result();
 
-
+// total blogs
     $data['total_blogs'] = $this->db->count_all('blogs');
 
     $data['published_blogs'] = $this->db
