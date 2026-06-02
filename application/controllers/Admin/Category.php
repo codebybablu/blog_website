@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Category extends CI_Controller {
 
-    // 🔹 List
+    // 🔹 List all catefories
     public function index() {
         $data['categories'] = $this->db->get('categories')->result();
         $this->load->view('admin/category/index', $data);
