@@ -2,4 +2,5 @@
 <!-- showing user name -->
 <p>Welcome <?= $this->session->userdata('user_name'); ?></p>
 
+<!-- adding logout -->
 <a href="<?= base_url('admin/logout') ?>">Logout</a>
