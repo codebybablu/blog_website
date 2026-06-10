@@ -9,7 +9,7 @@ class Blog extends MY_Controller {
         $this->checkAdmin();
     }
 
-    // 🔹 LIST
+    // 🔹 LIST Blogs
     public function index() {
         $data['blogs'] = $this->db
             ->select('blogs.*, categories.name as category_name')
