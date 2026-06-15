@@ -9,7 +9,7 @@ class Auth extends CI_Controller {
         $this->load->config('email');
     }
 
-    // 🔹 LOGIN PAGE
+    // 🔹 LOGIN PAGE View
     public function login() {
         $this->load->view('admin/auth/login');
     }
