@@ -14,7 +14,7 @@ class Auth extends CI_Controller {
         $this->load->view('admin/auth/login');
     }
 
-    // 🔹 LOGIN SUBMIT
+    // 🔹 LOGIN Function SUBMIT
     public function loginSubmit() {
         $email = $this->input->post('email');
         $password = $this->input->post('password'); // ❗ no md5
