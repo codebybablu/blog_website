@@ -123,7 +123,7 @@ class Auth extends CI_Controller {
     //     redirect('admin/login');
     // }
 
-    // 🔹 LOGOUT
+    // 🔹 LOGOUT Function 
     public function logout(){
         $this->session->sess_destroy(); // better than unset
         redirect('admin/auth/login');
