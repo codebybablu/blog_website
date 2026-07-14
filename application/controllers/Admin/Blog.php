@@ -60,7 +60,7 @@ class Blog extends MY_Controller {
         redirect('admin/blog');
     }
 
-    // 🔹 EDIT PAGE
+    // 🔹 EDIT PAGE Vlog
     public function edit($id) {
         $data['blog'] = $this->db->get_where('blogs', ['id' => $id])->row();
         $data['categories'] = $this->db->get('categories')->result();
